@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Vanishing Watch</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0b001a;
+      color: #f0e6ff;
+      margin: 40px;
+      line-height: 1.6;
+    }
+    h1 {
+      color: #c77dff;
+      text-shadow: 0 0 15px #9d4edd;
+    }
+    .answer {
+      margin-top: 20px;
+      background: #15002b;
+      padding: 15px;
+      border-radius: 8px;
+      display: none;
+    }
+    button {
+      background: #9d4edd;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+    button:hover {
+      background: #c77dff;
+    }
+    a {
+      color: #c77dff;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>The Vanishing Watch</h1>
+  <p>Detective Mira was called to a mansion where a priceless pocket watch had disappeared. 
+  Three people were in the study when it vanished — the butler polishing silver, the maid dusting shelves, 
+  and the owner reading near the window. The maid claimed she saw the butler take the watch, 
+  but he said he never left the table. The owner insisted no one moved near him.  
+  Yet Mira solved it in seconds. How?</p>
+
+  <button onclick="document.querySelector('.answer').style.display='block'">Reveal Answer 🔍</button>
+
+  <div class="answer">
+    <p>The watch was never stolen — it was still on the owner's chain, hidden by his book cover. 
+    The maid was lying to cover the broken vase she knocked over!</p>
+  </div>
+
+  <a href="index.html">⬅ Back to Home</a>
+</body>
+</html>

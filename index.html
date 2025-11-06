@@ -71,24 +71,78 @@
       color: #888;
       opacity: 0.8;
     }
+.library {
+  margin-top: 60px;
+  text-align: center;
+  animation: fadeIn 3s forwards;
+}
+
+.library h2 {
+  color: #e0aaff;
+  text-shadow: 0 0 10px #7b2cbf;
+  margin-bottom: 25px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  background: #15002b;
+  border-radius: 10px;
+  width: 250px;
+  padding: 20px;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+  box-shadow: 0 0 10px #3c096c;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #9d4edd;
+}
+
+.card h3 {
+  color: #c77dff;
+  margin-bottom: 10px;
+}
   </style>
 </head>
 <body>
+ <body>
   <h1>🕵️‍♂️ Mini Mysteries</h1>
   <p>Short, mind-twisting mysteries that challenge your logic.<br>New stories added every week.</p>
 
- <a href="mystery1.html" class="button">Start Reading</a>
-<br><br>
-<a href="#" class="button" onclick="openRandomMystery()">🎲 Random Mystery</a>
-  <script>
-  function openRandomMystery() {
-    const pages = ["mystery1.html", "mystery2.html"];
-    const randomPage = pages[Math.floor(Math.random() * pages.length)];
-    window.location.href = randomPage;
-  }
-</script>
+  <a href="mystery1.html" class="button">Start Reading</a>
+  <br><br>
+  <a href="#" class="button" onclick="openRandomMystery()">🎲 Random Mystery</a>
 
+  <div class="library">
+    <h2>📚 Mystery Library</h2>
+    <div class="cards">
+      <a href="mystery1.html" class="card">
+        <h3>The Vanishing Watch</h3>
+        <p>A priceless watch disappears in a locked study...</p>
+      </a>
+      <a href="mystery2.html" class="card">
+        <h3>The Locked Room Secret</h3>
+        <p>A woman is found in a sealed room — how was she attacked?</p>
+      </a>
+    </div>
+  </div>
 
   <footer>© 2025 Mini Mysteries | Created by Deekshith Gowdaa</footer>
+
+  <script>
+    function openRandomMystery() {
+      const pages = ["mystery1.html", "mystery2.html"];
+      const randomPage = pages[Math.floor(Math.random() * pages.length)];
+      window.location.href = randomPage;
+    }
+  </script>
 </body>
 </html>

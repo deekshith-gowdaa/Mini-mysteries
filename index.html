@@ -77,7 +77,17 @@
   <h1>🕵️‍♂️ Mini Mysteries</h1>
   <p>Short, mind-twisting mysteries that challenge your logic.<br>New stories added every week.</p>
 
-  <a href="mystery1.html" class="button">Start Reading</a>
+ <a href="mystery1.html" class="button">Start Reading</a>
+<br><br>
+<a href="#" class="button" onclick="openRandomMystery()">🎲 Random Mystery</a>
+  <script>
+  function openRandomMystery() {
+    const pages = ["mystery1.html", "mystery2.html"];
+    const randomPage = pages[Math.floor(Math.random() * pages.length)];
+    window.location.href = randomPage;
+  }
+</script>
+
 
   <footer>© 2025 Mini Mysteries | Created by Deekshith Gowdaa</footer>
 </body>

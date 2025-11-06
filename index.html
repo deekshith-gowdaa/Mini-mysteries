@@ -45,6 +45,25 @@
       to { opacity: 1; }
     }
 
+    a.button {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 12px 30px;
+      background: linear-gradient(90deg, #9d4edd, #7b2cbf);
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: bold;
+      box-shadow: 0 0 15px #7b2cbf;
+      transition: all 0.3s ease;
+    }
+
+    a.button:hover {
+      background: linear-gradient(90deg, #c77dff, #9d4edd);
+      box-shadow: 0 0 30px #c77dff;
+      transform: scale(1.05);
+    }
+
     footer {
       position: absolute;
       bottom: 15px;
@@ -56,7 +75,10 @@
 </head>
 <body>
   <h1>🕵️‍♂️ Mini Mysteries</h1>
-  <p><i>Short, mind-twisting mysteries that challenge your logic</i>.<br><i>New stories added every week.</i></p>
+  <p>Short, mind-twisting mysteries that challenge your logic.<br>New stories added every week.</p>
+
+  <a href="mystery1.html" class="button">Start Reading</a>
+
   <footer>© 2025 Mini Mysteries | Created by Deekshith Gowdaa</footer>
 </body>
 </html>

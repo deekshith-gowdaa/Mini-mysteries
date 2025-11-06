@@ -134,7 +134,9 @@
       </a>
     </div>
   </div>
-
+<div id="visitor-counter" style="margin-top: 40px; font-size: 1rem; color: #bbb;">
+  👁️ Visitors: <span id="count">Loading...</span>
+</div>
   <footer>© 2025 Mini Mysteries | Created by Deekshith Gowdaa</footer>
 
   <script>
@@ -142,6 +144,13 @@
       const pages = ["mystery1.html", "mystery2.html"];
       const randomPage = pages[Math.floor(Math.random() * pages.length)];
       window.location.href = randomPage;
+      // Visitor Counter
+fetch('https://api.countapi.xyz/hit/minimysteries/deekshithgowdaa')
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById('count').textContent = data.value;
+  });
+
     }
   </script>
 </body>

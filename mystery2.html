@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Locked Room Secret</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0b001a;
+      color: #f0e6ff;
+      margin: 40px;
+      line-height: 1.6;
+    }
+    h1 {
+      color: #c77dff;
+      text-shadow: 0 0 15px #9d4edd;
+    }
+    .answer {
+      margin-top: 20px;
+      background: #15002b;
+      padding: 15px;
+      border-radius: 8px;
+      display: none;
+    }
+    button {
+      background: #9d4edd;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+    button:hover {
+      background: #c77dff;
+    }
+    a {
+      color: #c77dff;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>The Locked Room Secret</h1>
+  <p>A woman was found unconscious in a locked room with no windows and the only key inside with her. 
+  The door was locked from the inside. No one could have entered or left. 
+  The police found no secret passage, yet the detective solved it in one glance.  
+  How did someone attack her in a locked room?</p>
+
+  <button onclick="document.querySelector('.answer').style.display='block'">Reveal Answer 🔍</button>
+
+  <div class="answer">
+    <p>The “room” was actually an elevator that got stuck between floors. 
+    The attacker pressed the emergency stop from outside and fled — leaving her locked inside!</p>
+  </div>
+
+  <a href="mystery1.html">⬅ Previous Mystery</a> |
+  <a href="mystery3.html">Next Mystery ➡</a>
+</body>
+</html>

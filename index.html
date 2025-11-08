@@ -71,7 +71,27 @@
       color: #888;
       opacity: 0.8;
     }
-    
+  .button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  font-size: 18px;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  background: #9d4edd;
+  border: none;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 0 15px #7b2cbf;
+  transition: all 0.3s ease;
+}
+.button:hover {
+  background: #c77dff;
+  box-shadow: 0 0 25px #c77dff, 0 0 50px #9d4edd;
+  transform: scale(1.05);
+}
+
 .library {
   margin-top: 60px;
   text-align: center;
@@ -125,7 +145,6 @@
   backdrop-filter: blur(6px);
   z-index: 100;
 }
-
 </style>
 </head>
 <body>
@@ -139,6 +158,7 @@
   <a href="mystery1.html" class="button">Start Reading</a>
   <br><br>
   <a href="#" class="button" onclick="openRandomMystery()">🎲 Random Mystery</a>
+  <a href="submit.html" class="button">✉️ Submit Your Mystery</a>
 
   <div class="library">
     <h2>📚 Mystery Library</h2>

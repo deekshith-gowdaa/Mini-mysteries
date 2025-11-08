@@ -111,9 +111,28 @@
   color: #c77dff;
   margin-bottom: 10px;
 }
+#visitor-counter {
+  position: fixed;
+  top: 10px;
+  right: 15px;
+  background: rgba(30, 0, 50, 0.7);
+  padding: 6px 15px;
+  border-radius: 15px;
+  color: #d0b3ff;
+  font-size: 0.95rem;
+  font-weight: 500;
+  box-shadow: 0 0 10px #7b2cbf;
+  backdrop-filter: blur(6px);
+  z-index: 100;
+}
+
 </style>
 </head>
 <body>
+  <div id="visitor-counter">
+  👁️ Visitors: <span id="count">Loading...</span>
+</div>
+
   <h1>🕵️‍♂️ Mini Mysteries</h1>
   <p>Short, mind-twisting mysteries that challenge your logic.<br>New stories added every week.</p>
 
@@ -132,9 +151,6 @@
         <h3>The Locked Room Secret</h3>
         <p>A woman is found in a sealed room — how was she attacked?</p>
       </a>
-    <div id="visitor-counter" style="margin-top: 40px; font-size: 1rem; color: #bbb;">
-  👁️ Visitors: <span id="count">Loading...</span>
-</div>
   </div>
   <footer>© 2025 Mini Mysteries | Created by Deekshith Gowdaa</footer>
 

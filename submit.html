@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submit Your Mystery</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top, #0b001a, #000);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+    h1 {
+      color: #c77dff;
+      text-shadow: 0 0 15px #9d4edd;
+    }
+    form {
+      background: #15002b;
+      padding: 25px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 0 20px #3c096c;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      background: #240046;
+      color: white;
+    }
+    button {
+      background: #9d4edd;
+      border: none;
+      padding: 10px;
+      border-radius: 8px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #c77dff;
+    }
+    #mysteries {
+      margin-top: 40px;
+      width: 90%;
+      max-width: 500px;
+    }
+    .mystery {
+      background: #240046;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 8px;
+      text-align: left;
+      box-shadow: 0 0 10px #3c096c;
+    }
+  </style>
+</head>
+<body>
+  <h1>🕵️ Submit Your Mystery</h1>
+  <form id="mysteryForm">
+    <input type="text" id="name" placeholder="Your Name" required>
+    <textarea id="story" rows="4" placeholder="Write your mystery..." required></textarea>
+    <button type="submit">Submit Mystery ✉️</button>
+  </form>
+
+  <div id="mysteries">
+    <h2>Latest Mysteries 🔮</h2>
+    <div id="mysteryList"></div>
+  </div>
+
+  <script type="module">
+ // Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyATFEy3XCHWXw729LvXQ1eDPgYpzi_5qYA",
+  authDomain: "mini-mysteries.firebaseapp.com",
+  projectId: "mini-mysteries",
+  storageBucket: "mini-mysteries.firebasestorage.app",
+  messagingSenderId: "258301085984",
+  appId: "1:258301085984:web:d2baa363b97d9cee576f45"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+    // Firebase imports
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import { getFirestore, collection, addDoc, getDocs, query, orderBy, limit } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    const form = document.getElementById("mysteryForm");
+    const list = document.getElementById("mysteryList");
+
+    async function loadMysteries() {
+      list.innerHTML = "";
+      const q = query(collection(db, "mysteries"), orderBy("timestamp", "desc"), limit(10));
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((doc) => {
+        const data = doc.data();
+        const div = document.createElement("div");
+        div.className = "mystery";
+        div.innerHTML = `<strong>${data.name}</strong>: ${data.story}`;
+        list.appendChild(div);
+      });
+    }
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const name = document.getElementById("name").value;
+      const story = document.getElementById("story").value;
+
+      await addDoc(collection(db, "mysteries"), {
+        name,
+        story,
+        timestamp: new Date()
+      });
+
+      form.reset();
+      loadMysteries();
+    });
+
+    loadMysteries();
+  </script>
+</body>
+</html>
